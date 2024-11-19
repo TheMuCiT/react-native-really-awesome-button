@@ -81,6 +81,7 @@ export type ButtonTypes = {
   textSize?: number;
   width?: number | null;
   children?: string | ReactNode;
+  delayLongPress?: number;
   onPress?: (callback?: () => void) => void;
   onLongPress?: PressableProps['onLongPress'];
   onPressIn?: (event: GestureResponderEvent) => void;
@@ -124,6 +125,7 @@ const AwesomeButton = ({
   onProgressStart = () => null,
   onProgressEnd = () => null,
   onLongPress = null,
+  delayLongPress = 500,
   dangerouslySetPressableProps = {},
   progress = false,
   paddingBottom = 0,
@@ -160,14 +162,14 @@ const AwesomeButton = ({
   const [stateWidth, setStateWidth] = useState<number | null>(null);
   const debouncedPress = debouncedPressTime
     ? debounce(
-        (animateProgressEnd: (callback?: any) => void) =>
-          onPress(animateProgressEnd),
-        debouncedPressTime,
-        {
-          trailing: false,
-          leading: true,
-        }
-      )
+      (animateProgressEnd: (callback?: any) => void) =>
+        onPress(animateProgressEnd),
+      debouncedPressTime,
+      {
+        trailing: false,
+        leading: true,
+      }
+    )
     : onPress;
 
   const layout = {
@@ -586,6 +588,7 @@ const AwesomeButton = ({
       onLongPress={onLongPress}
       {...dangerouslySetPressableProps}
       onPressIn={handlePressIn}
+      delayLongPress={delayLongPress}
       onPressOut={handlePressOut}
     >
       <Animated.View
