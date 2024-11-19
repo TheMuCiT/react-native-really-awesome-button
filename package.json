@@ -41,13 +41,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/rcaferati/react-native-really-awesome-button",
+  "repository": "https://github.com/TheMuCiT/react-native-really-awesome-button",
   "author": "rcaferati <rafael@caferati.me> (https://github.com/rcaferati)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rcaferati/react-native-really-awesome-button/issues"
+    "url": "https://github.com/TheMuCiT/react-native-really-awesome-button/issues"
   },
-  "homepage": "https://github.com/rcaferati/react-native-really-awesome-button#readme",
+  "homepage": "https://github.com/TheMuCiT/react-native-really-awesome-button#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -71,7 +71,7 @@
     "prettier": "^2.0.5",
     "react": "17.0.2",
     "react-native": "0.68.2",
-    "react-native-builder-bob": "^0.18.3",
+    "react-native-builder-bob": "^0.32.1",
     "react-native-owl": "^1.1.1",
     "react-test-renderer": "^17.0.2",
     "release-it": "^15.0.0",
