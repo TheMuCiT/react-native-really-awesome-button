@@ -507,6 +507,14 @@ const AwesomeButton = ({
     [raiseLevel, children, progress, onPress]
   );
 
+  const handleOnPress = () => {
+    if (disabled === true || !children || progressing.current === true) {
+      return;
+    }
+
+    press();
+  }
+
   const animatedValues = getAnimatedValues();
 
   const renderActivity = useMemo(() => {
@@ -586,6 +594,7 @@ const AwesomeButton = ({
       testID="aws-btn-content-view"
       hitSlop={hitSlop}
       onLongPress={onLongPress}
+      onPress={handleOnPress}
       {...dangerouslySetPressableProps}
       onPressIn={handlePressIn}
       delayLongPress={delayLongPress}
